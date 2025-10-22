@@ -1,7 +1,9 @@
 import sys #for reading command-line arguments and exiting the program
-import requests #for sending HTTP requests to the CoinDesk API
+import requests #for making HTTP requests to the CoinCap API
 
+#my personal CoinCap API key
 API_KEY = "a9701372934f03b7bdd9d191ec68344dd0b21e4907c9f08e085ca38f6372a91b"
+#base URL for the CoinCap Bitcoin price endpoint
 URL = f"https://rest.coincap.io/v3/assets/bitcoin?apiKey={API_KEY}"
 
 
