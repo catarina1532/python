@@ -1,5 +1,5 @@
-import sys
-import requests
+import sys #for reading command-line arguments and exiting the program
+import requests #for sending HTTP requests to the CoinDesk API
 
 API_KEY = "a9701372934f03b7bdd9d191ec68344dd0b21e4907c9f08e085ca38f6372a91b"
 URL = f"https://rest.coincap.io/v3/assets/bitcoin?apiKey={API_KEY}"
