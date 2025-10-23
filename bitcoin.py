@@ -32,6 +32,7 @@ def get_amount():
 
 def get_bitcoin_price():
     try:
+        #send a get request to CoinCap's
         response = requests.get(URL)
         response.raise_for_status()
         data = response.json()
