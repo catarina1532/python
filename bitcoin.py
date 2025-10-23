@@ -11,7 +11,7 @@ def main():
     amount = get_amount()
     price = get_bitcoin_price()
     total = amount * price
-    print(f"{amount} BTC = ${total:,.4f}")
+    print(f"${total:,.4f}") #format:commas+4 decimal places
 
 
 def get_amount():
