@@ -8,20 +8,25 @@ URL = f"https://rest.coincap.io/v3/assets/bitcoin?apiKey={API_KEY}"
 
 
 def main():
+    #get the number of bitcoins from the command-line
     amount = get_amount()
+    #get the current bitcoin price in USD from the CoinCap API
     price = get_bitcoin_price()
+    #calculate the total cost in USD
     total = amount * price
-    print(f"${total:,.4f}") #format:commas+4 decimal places
+    #print the result formatted with commas and 4 decimal places
+    print(f"${total:,.4f}")
 
 
 def get_amount():
-    # Verifica se o utilizador forneceu o argumento
+    #check that exactly one command-line argument was provided
     if len(sys.argv) != 2:
         sys.exit("Missing command-line argument")
     try:
         value = float(sys.argv[1])
         return value
     except ValueError:
+        #
         sys.exit("Command-line argument is not a number")
 
 
