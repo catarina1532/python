@@ -26,7 +26,7 @@ def get_amount():
         value = float(sys.argv[1])
         return value
     except ValueError:
-        #
+        #if it fails
         sys.exit("Command-line argument is not a number")
 
 
