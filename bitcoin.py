@@ -38,5 +38,6 @@ def fetch_bitcoin_price():
         sys.exit("Unexpected response format from API")
 
 
+#run the program
 if __name__ == "__main__":
     main()
