@@ -35,7 +35,7 @@ def get_bitcoin_price():
         #send a get request to CoinCap bitcoin endpoint
         response = requests.get(URL)
         response.raise_for_status() #raise an error if the HTTP response is not 200 OK
-        #parse the response as JSON (convert from text to a Python dict)
+        #parse the response as JSON (convert from text to a python dict)
         data = response.json()
         #extract the bitcoin price from the JSON response
         #the structure of the JSON is: { "data": { "priceUsd": "XXXXX" }, ... }
