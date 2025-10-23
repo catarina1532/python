@@ -32,15 +32,20 @@ def get_amount():
 
 def get_bitcoin_price():
     try:
-        #send a get request to CoinCap's
+        #send a get request to CoinCap bitcoin endpoint
         response = requests.get(URL)
-        response.raise_for_status()
+        response.raise_for_status() #raise an error if the HTTP response is not 200 OK
+        #parse the response as JSON (convert from text to a Python dict)
         data = response.json()
+        #extract the bitcoin price from the JSON response
+        #the structure of the JSON is: { "data": { "priceUsd": "XXXXX" }, ... }
         price = float(data["data"]["priceUsd"])
         return price
     except requests.RequestException:
+        #handle connection errors, timeouts, or invalid responses
         sys.exit("Error fetching data from CoinCap API")
     except KeyError:
+        #handle unexpected response format or missing data
         sys.exit("Unexpected response format from API")
 
 
