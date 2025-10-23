@@ -9,7 +9,7 @@ URL = f"https://rest.coincap.io/v3/assets/bitcoin?apiKey={API_KEY}"
 
 def main():
     amount = get_amount()
-    price = fetch_bitcoin_price()
+    price = get_bitcoin_price()
     total = amount * price
     print(f"{amount} BTC = ${total:,.4f}")
 
@@ -25,7 +25,7 @@ def get_amount():
         sys.exit("Command-line argument is not a number")
 
 
-def fetch_bitcoin_price():
+def get_bitcoin_price():
     try:
         response = requests.get(URL)
         response.raise_for_status()
