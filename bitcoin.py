@@ -19,14 +19,14 @@ def main():
 
 
 def get_amount():
-    #check that exactly one command-line argument was provided
+    #check if exactly one command-line argument was provided
     if len(sys.argv) != 2:
         sys.exit("Missing command-line argument")
     try:
         value = float(sys.argv[1])
         return value
     except ValueError:
-        #if it fails
+        #if it fails (if the argument isn't a number), exit with an error message
         sys.exit("Command-line argument is not a number")
 
 
